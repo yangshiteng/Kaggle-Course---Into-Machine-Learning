@@ -39,3 +39,15 @@ You can capture more factors using a tree that has more "splits." These are call
 You predict the price of any house by tracing through the decision tree, always picking the path corresponding to that house's characteristics. The predicted price for the house is at the bottom of the tree. The point at the bottom where we make a prediction is called a leaf.
 
 The splits and values at the leaves will be determined by the data, so it's time for you to check out the data you will be working with.
+
+# Experimenting With Different Models
+
+Now that you have a reliable way to measure model accuracy, you can experiment with alternative models and see which gives the best predictions. But what alternatives do you have for models?
+
+You can see in scikit-learn's documentation that the decision tree model has many options (more than you'll want or need for a long time). The most important options determine the tree's depth. Recall from the first lesson in this course that a tree's depth is a measure of how many splits it makes before coming to a prediction. This is a relatively shallow tree
+
+![image](https://user-images.githubusercontent.com/60442877/132115009-9243248c-bf4a-4576-94d7-0372cce9746a.png)
+
+In practice, it's not uncommon for a tree to have 10 splits between the top level (all houses) and a leaf. As the tree gets deeper, the dataset gets sliced up into leaves with fewer houses. If a tree only had 1 split, it divides the data into 2 groups. If each group is split again, we would get 4 groups of houses. Splitting each of those again would create 8 groups. If we keep doubling the number of groups by adding more splits at each level, we'll have  $2^10$  groups of houses by the time we get to the 10th level. That's 1024 leaves.
+
+
